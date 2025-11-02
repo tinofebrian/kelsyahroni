@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;700;900&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Background hitam untuk header dan body */
+    color: #fff;
+    min-height: 100vh;
+}
+
+/* Header dan Navigasi */
+.main-header {
+    background-color: #000;
+    color: #fff;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+    font-weight: 700;
+}
+
+.logo {
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    font-weight: 900;
+}
+
+.logo-lightning {
+    color: #8a2be2; /* Warna ungu */
+    font-size: 1.2em;
+}
+
+.team-nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 25px;
+    padding-bottom: 5px;
+    font-size: 1em;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.team-nav a:hover,
+.team-nav a.active {
+    color: #8a2be2; /* Warna ungu saat aktif/hover */
+    border-bottom: 2px solid #8a2be2;
+}
+
+/* Kontainer Utama Profil */
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+/* Kartu Profil Besar */
+.profile-card {
+    display: flex;
+    background: linear-gradient(to right bottom, #ffea00, #ff8c00); /* Gradient Emas/Oranye */
+    border-radius: 30px; /* Sudut membulat dari contoh e-commerce */
+    width: 90%;
+    max-width: 1200px;
+    height: 600px; /* Tinggi tetap agar terlihat impresif */
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.text-content {
+    flex: 1;
+    padding: 50px;
+    color: #000;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2; /* Pastikan teks di atas gradient */
+}
+
+.role-text-top {
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.member-name {
+    font-family: 'Bebas Neue', sans-serif; /* Font Tebal dan Besar */
+    font-size: 8em; /* Ukuran sangat besar */
+    line-height: 0.8;
+    margin: 0;
+}
+
+.member-nim {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3em;
+    margin: 10px 0 20px 0;
+}
+
+.member-role {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5em;
+    margin: 0 0 30px 0;
+    color: #333; /* Sedikit berbeda dari warna teks utama */
+}
+
+.member-description {
+    font-size: 1.1em;
+    font-weight: 400;
+    line-height: 1.5;
+    max-width: 80%;
+}
+
+.member-photo {
+    width: 50%; /* Foto mengambil setengah lebar kartu */
+    height: 100%;
+    object-fit: cover;
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%); /* Potongan miring sederhana */
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+    .member-name {
+        font-size: 6em;
+    }
+    .member-nim {
+        font-size: 2.5em;
+    }
+    .member-role {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-card {
+        flex-direction: column; /* Ubah menjadi vertikal */
+        height: auto;
+    }
+    .text-content {
+        order: 2; /* Pindahkan teks ke bawah */
+        padding: 30px;
+    }
+    .member-photo {
+        order: 1; /* Pindahkan foto ke atas */
+        width: 100%;
+        height: 300px;
+        clip-path: none; /* Hilangkan potongan miring */
+    }
+    .member-name {
+        font-size: 4em;
+    }
+    .member-nim, .member-role {
+        font-size: 1.8em;
+    }
+    .team-nav a {
+        margin: 0 10px;
+    }
+}
